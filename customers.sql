@@ -1,7 +1,7 @@
 create table cb_customers
 (id number generated always as identity primary key,
-first_name varchar(2),
-last_name varchar(2),
+first_name varchar2(30),
+last_name varchar2(30),
 birth_date date,
 gender char(1));
 
@@ -9,7 +9,7 @@ create or replace procedure cb_customers_insert
 (p_first_name varchar2,p_last_name varchar2,p_birth_date date,p_gender char)
 is
 begin
-insert into cb_customer(first_name,last_name,birth_date,gender)
+insert into cb_customers(first_name,last_name,birth_date,gender)
 values(p_first_name,p_last_name,p_birth_date,p_gender);
 commit;
 end;
